@@ -75,8 +75,8 @@ func check_spawn_tiles(x: int, y: int):
 
 func _process(delta):
 	timeFromLastTick += delta
-	if timeFromLastTick >= 0.1:
-		timeFromLastTick -= 0.1
+	if timeFromLastTick >= 1:
+		timeFromLastTick -= 1
 		for i in range(0,pheromon_house_map.size()):
 			for j in range(0,pheromon_house_map[0].size()):
 				pheromon_house_map[i][j] = max(0, pheromon_house_map[i][j] - $Camera2D/GUI/PheromonDecay.value)
@@ -84,13 +84,14 @@ func _process(delta):
 				modulate_pheromon_display(i, j)
 
 func modulate_pheromon_display(tmp_x: int, tmp_y: int) -> void:
-	var house_mod: Color = Color(0.0,0.0,1.0,pheromon_house_map[tmp_x][tmp_y] / 1000.0)
-	var food_mod: Color = Color(0.0,1.0,0.0,pheromon_food_map[tmp_x][tmp_y] / 1000.0)
+	var house_mod: Color = Color(0.0,0.0,1.0,pheromon_house_map[tmp_x][tmp_y] / 400.0)
+	var food_mod: Color = Color(0.0,1.0,0.0,pheromon_food_map[tmp_x][tmp_y] / 400.0)
 	var house_present: float = clamp(pheromon_house_map[tmp_x][tmp_y], 0, 1)
 	var food_present: float = clamp(pheromon_food_map[tmp_x][tmp_y], 0, 1)
 	pheromon_display[tmp_x][tmp_y].modulate = house_mod + food_mod
 	pheromon_display[tmp_x][tmp_y].modulate = Color(0.0, food_mod.b*food_mod.a, house_mod.b*house_mod.a, house_mod.a+food_mod.a)
 	pheromon_display[tmp_x][tmp_y].modulate = house_mod.blend(food_mod)
+	
 
 func set_pheromon_displayed(is_displayed: bool) -> void:
 	for sprite in get_node("Pheromons").get_children():

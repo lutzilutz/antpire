@@ -63,6 +63,8 @@ func _process(delta):
 			pheromon_spawn.emit(path_start_position.x, path_start_position.y, 1)
 			path_end_position = follow_house_pheromons()
 			direction = 8 * (path_end_position-path_start_position).angle() / (2*PI)
+			for el in $PheromonArea.get_overlapping_areas():
+				el.get_parent().modulate = Color(1.0,0.0,0.0)
 		update_visuals()
 	position = 8.0*path_start_position.lerp(path_end_position, path_factor) + Vector2(4,4)
 	
