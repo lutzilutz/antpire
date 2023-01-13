@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1u5i08eu0bdl"]
+
+[ext_resource type="Script" path="res://scenes/pheromon.gd" id="1_bavvp"]
+[ext_resource type="Texture2D" uid="uid://ctenxoeidcars" path="res://resources/pheromon.png" id="2_vrkl8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7sh4"]
+size = Vector2(8, 8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8tf4i"]
+font_size = 8
+
+[node name="Pheromon" type="Node2D"]
+script = ExtResource("1_bavvp")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_vrkl8")
+
+[node name="PheromonArea" type="Area2D" parent="."]
+
+[node name="PheromonHitbox" type="CollisionShape2D" parent="PheromonArea"]
+shape = SubResource("RectangleShape2D_j7sh4")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+label_settings = SubResource("LabelSettings_8tf4i")

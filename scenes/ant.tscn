@@ -1,15 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://hlvo17c3v540"]
+[gd_scene load_steps=4 format=3 uid="uid://hlvo17c3v540"]
 
-[ext_resource type="Script" path="res://ant.gd" id="1_6ruhu"]
-[ext_resource type="Texture2D" uid="uid://cr1yk0r0vecrb" path="res://ant.png" id="2_iie74"]
-[ext_resource type="Texture2D" uid="uid://b3n1h1aflurbx" path="res://ant_food.png" id="3_5u7ww"]
+[ext_resource type="Texture2D" uid="uid://cr1yk0r0vecrb" path="res://resources/ant.png" id="1_sbylu"]
+[ext_resource type="Texture2D" uid="uid://b3n1h1aflurbx" path="res://resources/ant_food.png" id="2_sch2x"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_tkda4"]
+[sub_resource type="LabelSettings" id="LabelSettings_pjcxx"]
 line_spacing = 0.0
 font_size = 8
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_6ruhu")
 
 [node name="EndPosition" type="Polygon2D" parent="."]
 color = Color(1, 0, 0, 1)
@@ -22,15 +20,15 @@ offset_top = -16.0
 offset_right = 12.0
 offset_bottom = -1.0
 text = "STATE"
-label_settings = SubResource("LabelSettings_tkda4")
+label_settings = SubResource("LabelSettings_pjcxx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AntSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_iie74")
+texture = ExtResource("1_sbylu")
 
 [node name="FoodSprite" type="Sprite2D" parent="AntSprite"]
-texture = ExtResource("3_5u7ww")
+texture = ExtResource("2_sch2x")
 
 [node name="PheromonArea" type="Area2D" parent="."]
 

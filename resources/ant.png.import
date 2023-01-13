@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctenxoeidcars"
-path="res://.godot/imported/pheromon.png-0b5b5eb68d87f5cf0f9494640b47e6fc.ctex"
+uid="uid://cr1yk0r0vecrb"
+path="res://.godot/imported/ant.png-c463b7a355e4d7b46f7d9f04ef14c144.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pheromon.png"
-dest_files=["res://.godot/imported/pheromon.png-0b5b5eb68d87f5cf0f9494640b47e6fc.ctex"]
+source_file="res://resources/ant.png"
+dest_files=["res://.godot/imported/ant.png-c463b7a355e4d7b46f7d9f04ef14c144.ctex"]
 
 [params]
 
